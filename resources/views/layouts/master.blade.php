@@ -43,17 +43,17 @@
         Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
     -->
       <div class="logo">
-        <a href="http://www.creative-tim.com" class="simple-text logo-mini">
-          CT
+        <a href="" class="simple-text logo-mini">
+          Admin
         </a>
-        <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-          Creative Tim
+        <a href="" class="simple-text logo-normal">
+          Dashboard
         </a>
       </div>
       <div class="sidebar-wrapper" id="sidebar-wrapper">
         <ul class="nav">
           <li>
-            <a href="./dashboard.html">
+            <a href="/dashboard">
               <i class="now-ui-icons design_app"></i>
               <p>Dashboard</p>
             </a>
@@ -77,7 +77,7 @@
             </a>
           </li>
           <li>
-            <a href="./user.html">
+            <a href="/role-register">
               <i class="now-ui-icons users_single-02"></i>
               <p>User Profile</p>
             </a>

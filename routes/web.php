@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,9 @@ Route::group(['middleware' => ['auth','admin']],function(){
         return view('admin.dashboard');
     });
 
+    Route::get('/role-register','Admin\DashboardController@registered');
+    Route::get('/role-edit/{id}','Admin\DashboardController@registeredit');
+    Route::put('/role-register-update/{id}','Admin\DashboardController@registerupdate');
 });
 
 

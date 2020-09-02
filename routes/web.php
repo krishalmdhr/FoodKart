@@ -14,9 +14,11 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::redirect('/','/home');
 
 Auth::routes();
 
@@ -24,13 +26,13 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => ['auth','admin']],function(){
 
-    Route::get('/dashboard', function () {
-        return view('admin.dashboard');
-    });
+Route::get('/dashboard', function () {
+    return view('admin.dashboard');
+});
 
-    Route::get('/role-register','Admin\DashboardController@registered');
-    Route::get('/role-edit/{id}','Admin\DashboardController@registeredit');
-    Route::put('/role-register-update/{id}','Admin\DashboardController@registerupdate');
+Route::get('/role-register','Admin\DashboardController@registered');
+Route::get('/role-edit/{id}','Admin\DashboardController@registeredit');
+Route::put('/role-register-update/{id}','Admin\DashboardController@registerupdate');
 });
 
 

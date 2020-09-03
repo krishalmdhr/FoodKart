@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use Illuminate\Http\Request;
+// use Darryldecode\Cart\Cart;
 
 class CartController extends Controller
 {
@@ -15,7 +16,7 @@ class CartController extends Controller
             'id' => $product->id,
             'name' => $product->name,
             'price' => $product->price,
-            'quantity' => 4,
+            'quantity' => 1,
             'attributes' => array()
         ));
 
@@ -31,6 +32,18 @@ class CartController extends Controller
     public function destroy($itemId)
     {
         \Cart::session(auth()->id())->remove($itemId);
+        return back();
+    }
+
+    public function update($rowId)
+    {
+        \Cart::session(auth()->id())->update($rowId,[
+            'quantity' => [
+                'relative' => false,
+                'value' => request('quantity')
+            ]
+        ]);
+
         return back();
     }
 }

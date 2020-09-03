@@ -1,12 +1,26 @@
 @extends('layouts.app')
 
 @section('content')
+
+{{-- <ul class="navbar-nav ml-auto">
+
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('cart.index') }}">
+            Cart
+            <div class="badge-danger" style="width: 30px;">
+                {{\Cart::session(auth()->id())->getContent()->count()}}
+            </div>
+
+        </a>
+    </li>
+</ul> --}}
+
 <div class="container text-center">
     <h2>Products</h2>
 
     <div class="row">
-        @foreach ($allProducts as $product)
 
+        @foreach ($allProducts as $product)
 
         <div class="col-4">
             <div class="card">
@@ -14,6 +28,7 @@
                     <div class="card-body">
                     <h4 class="card-title">{{$product->name}}</h4>
                     <p class="card-text">{{$product->description}}</p>
+                    <h3> Rs. {{$product->price}}</h3>
                     </div>
                     <div class="card-body">
                     <a href="{{route('cart.add',$product->id)}}" class="card-link">Add to Cart</a>

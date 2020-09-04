@@ -10,22 +10,26 @@
             <tr>
                 <th>Name</th>
                 <th>Price</th>
+                {{-- <th>Vendor</th> --}}
                 <th>Quantity</th>
                 <th>Action</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($cartItems as $item)
-            <tr>
+            {{-- <tr>
                 <td scope="row"></td>
                 <td></td>
                 <td></td>
-            </tr>
+            </tr> --}}
             <tr>
                 <td scope="row">{{$item->name}}</td>
                 <td>
                     {{Cart::session(auth()->id())->get($item->id)->getPriceSum()}}
                 </td>
+                {{-- <td>
+                    {{$item->vendor}}
+                </td> --}}
                 <td>
                     <form action="{{route('cart.update',$item->id)}}">
                         <input name="quantity" type="number" min="1" value="{{$item->quantity}}">

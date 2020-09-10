@@ -41,16 +41,16 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-
+                        @auth
                         <li class="nav-item">
                             <a class="nav-link p-0 m-0" href="{{ route('cart.index') }}">
                                 <i class="fas fa-shopping-cart fa-2x" style="color: orange"></i>
                                 <div class="badge badge-danger mr-2">
                                     {{\Cart::session(auth()->id())->getContent()->count()}}
                                 </div>
-
                             </a>
                         </li>
+                        @endauth
 
 
                         <!-- Authentication Links -->

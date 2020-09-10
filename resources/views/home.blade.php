@@ -2,19 +2,6 @@
 
 @section('content')
 
-{{-- <ul class="navbar-nav ml-auto">
-
-    <li class="nav-item">
-        <a class="nav-link" href="{{ route('cart.index') }}">
-            Cart
-            <div class="badge-danger" style="width: 30px;">
-                {{\Cart::session(auth()->id())->getContent()->count()}}
-            </div>
-
-        </a>
-    </li>
-</ul> --}}
-
 <div class="container text-center">
     <h2>Products</h2>
 

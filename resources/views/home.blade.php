@@ -13,13 +13,11 @@
             <div class="card">
                 <img class="card-img-top" src="{{asset('product.jpg')}}" alt="Card image cap">
                     <div class="card-body">
-                    <h4 class="card-title">{{$product->name}}</h4>
-                    <p class="card-text">{{$product->description}}</p>
-                    <h4> Rs. {{$product->price}}</h4>
-                    <h4>{{$product->vendor}}</h4>
-                    </div>
-                    <div class="card-body">
-                    <a href="{{route('cart.add',$product->id)}}" class="card-link">Add to Cart</a>
+                        <h4 class="card-title">{{$product->name}}</h4>
+                        <p class="card-text">{{$product->description}}</p>
+                        <h4 style="color: green">${{$product->price}}</h4>
+                        <h4>{{$product->vendor}}</h4>
+                        <a href="{{route('cart.add',$product->id)}}" class="card-link">Add to Cart</a>
                     </div>
             </div>
         </div>

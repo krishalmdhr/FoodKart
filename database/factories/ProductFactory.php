@@ -9,7 +9,7 @@ $factory->define(Product::class, function (Faker $faker) {
     return [
         'name' => $faker->sentence(2),
         'description' => $faker->sentence(5),
-        'price' => $faker->numberBetween(50,1000),
+        'price' => $faker->numberBetween(1,20),
         'vendor' => $faker->sentence(2),
     ];
 });
